@@ -1,0 +1,12 @@
+{
+  "builds": [
+    { "src": "main.go", "use": "@vercel/go" }  // Adjust based on your script
+  ],
+  "routes": [
+    { "src": "/rss.xml", "dest": "/public/rss.xml" }  // Assuming the script outputs rss.xml to /public
+  ],
+  "cron": {
+    "schedule": "*/15 * * * *",  // Every 15 minutes
+    "path": "/api/generateRSS"
+  }
+}
